@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ImageURISource,
-  StyleSheet,
-  Button,
-} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 import AvatarDefault from '../../assets/images/icons/avatar_default.png';
 import {Avatar} from 'react-native-paper';
 import {Colors} from '../constants/color';

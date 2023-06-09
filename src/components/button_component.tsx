@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ImageURISource,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
-import {Colors} from '../constants/color';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 export interface ButtonComponentProps {
   title: string;
   backgroundColor: string;
@@ -22,13 +13,14 @@ const ButtonComponent = (props: ButtonComponentProps) => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         ...styles.container,
         backgroundColor: props.backgroundColor,
-        borderColor: props.borderColor ? props.borderColor : 'black',
+        borderColor: props.borderColor || 'black',
         borderWidth: 2,
-        borderRadius: props.borderRadius ? props.borderRadius : 20,
-        paddingVertical: props.paddingVertical ? props.paddingVertical : 20,
+        borderRadius: props.borderRadius || 20,
+        paddingVertical: props.paddingVertical || 20,
       }}>
       <Text style={{...styles.text, color: props.color}}>{props.title}</Text>
     </TouchableOpacity>

@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, Image, ImageURISource, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import Logo from '../../assets/images/icons/logo_1.png';
 import {Colors} from '../constants/color';
-const HomeView = () => {
+const HomeScreen = () => {
   const source = Image.resolveAssetSource(Logo).uri;
   return (
     <View style={styles.container}>
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeView;
+export default HomeScreen;

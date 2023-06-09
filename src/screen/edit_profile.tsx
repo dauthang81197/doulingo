@@ -1,50 +1,45 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ImageURISource,
-  StyleSheet,
-  Button,
-} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import AvatarComponent from '../components/avatar_component';
 import InputComponent from '../components/input_component';
 import {Colors} from '../constants/color';
 import ButtonComponent from '../components/button_component';
 const EditProfileScreen = () => {
   return (
-    <View style={styles.contairner}>
-      <Text style={styles.textTitle}>Your Profile</Text>
-      <View style={styles.avatar}>
-        <AvatarComponent />
-        <Text style={styles.textAvatar}>CHANGE AVATAR</Text>
-      </View>
-      <View>
-        <InputComponent label="Name" placeholder="Input Name" />
-        <InputComponent label="Username" placeholder="Input Username" />
-        <InputComponent label="Password" placeholder="Input Password" />
-        <InputComponent label="Email" placeholder="Input Email" />
-      </View>
+    <ScrollView>
+      <View style={styles.contairner}>
+        <Text style={styles.textTitle}>Your Profile</Text>
+        <View style={styles.avatar}>
+          <AvatarComponent />
+          <Text style={styles.textAvatar}>CHANGE AVATAR</Text>
+        </View>
+        <View>
+          <InputComponent label="Name" placeholder="Input Name" />
+          <InputComponent label="Username" placeholder="Input Username" />
+          <InputComponent label="Password" placeholder="Input Password" />
+          <InputComponent label="Email" placeholder="Input Email" />
+        </View>
 
-      <View style={{gap: 10}}>
-        <ButtonComponent
-          title="CREATE AN ACCOUNT"
-          onPress={() => null}
-          backgroundColor={'white'}
-          color={Colors.blue}
-          paddingVertical={12}
-          borderColor={'#949494'}
-        />
-        <ButtonComponent
-          title="ALREADY HAVE AN ACCOUNT?"
-          onPress={() => null}
-          backgroundColor={'white'}
-          color={Colors.blue}
-          paddingVertical={12}
-          borderColor={'#949494'}
-        />
+        <View style={{gap: 10, marginTop: 20}}>
+          <ButtonComponent
+            title="EDIT DAILY GOALS"
+            onPress={() => null}
+            backgroundColor={'white'}
+            color={Colors.blue}
+            paddingVertical={12}
+            borderColor={Colors.borderButton}
+          />
+          <ButtonComponent
+            title="HELP CENTER"
+            onPress={() => null}
+            backgroundColor={'white'}
+            color={Colors.blue}
+            paddingVertical={12}
+            borderColor={Colors.borderButton}
+          />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -65,9 +60,8 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   textTitle: {
-    fontFamily: 'Jua',
     fontSize: 22,
-    color: '#090909',
+    color: Colors.textTitle,
     fontWeight: '700',
   },
 });
