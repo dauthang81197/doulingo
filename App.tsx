@@ -6,10 +6,10 @@
  */
 
 import React from 'react';
-import OtpScreen from './src/screen/otp';
+import PasswordScreen from './src/screen/password_screen';
 
 function App(): JSX.Element {
-  return <OtpScreen />;
+  return <PasswordScreen />;
 }
 
 export default App;
