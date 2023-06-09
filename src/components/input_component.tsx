@@ -1,16 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ImageURISource,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {Colors} from '../constants/color';
-import ButtonComponent from './button_component';
 export interface ButtonComponentProps {
   label?: string;
   backgroundColor?: string;
@@ -21,13 +11,11 @@ export interface ButtonComponentProps {
 const InputComponent = (props: ButtonComponentProps) => {
   const [value, onChangeText] = React.useState('');
   return (
-    <View>
+    <View style={{marginBottom: 10}}>
       <Text style={styles.label}>{props.label}</Text>
       <View style={styles.container}>
         <TextInput
-          editable
-          multiline
-          numberOfLines={4}
+          multiline={false}
           maxLength={props.maxLength}
           onChangeText={text => onChangeText(text)}
           placeholder={props.placeholder}
@@ -45,18 +33,21 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 20,
     height: 60,
+    justifyContent: 'center',
   },
   label: {
     fontSize: 25,
-    fontWeight: '400',
+    fontWeight: '600',
     color: '#949494',
     marginBottom: 10,
-    fontFamily: 'Jua',
   },
   input: {
     backgroundColor: Colors.lightGray,
     paddingHorizontal: 25,
+    height: 56,
     borderRadius: 20,
+    fontSize: 20,
+    justifyContent: 'center',
   },
 });
 
